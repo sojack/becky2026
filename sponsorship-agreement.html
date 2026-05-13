@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsorship Agreement — Becky Yuan English Channel 2026</title>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ── Tokens (matches index.html) ── */
+    :root {
+      --navy:       #1a1a2e;
+      --navy-card:  #2a2a4a;
+      --blue-accent:#2d5be3;
+      --blue-light: #6b8fff;
+      --grey-bg:    #f5f5f5;
+      --text:       #222;
+      --text-muted: #666;
+      --white:      #ffffff;
+      --font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--grey-bg);
+      line-height: 1.6;
+    }
+
+    /* ── Document header ── */
+    .doc-header {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 48px 40px 40px;
+    }
+
+    .header-logo {
+      width: 160px;
+      margin: 0 auto 28px;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+
+    .header-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .header-subtitle {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 1px;
+    }
+
+    /* ── Document body ── */
+    .doc-body {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 56px 64px;
+      box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    /* ── Section ── */
+    .doc-section {
+      margin-bottom: 48px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    /* ── Intro ── */
+    .intro {
+      font-size: 0.875rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+
+    /* ── Parties ── */
+    .parties-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .party-block h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    /* ── Fields ── */
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .field input[type="text"],
+    .field input[type="date"] {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      padding: 6px 0;
+      font-family: var(--font);
+      font-size: 0.925rem;
+      color: var(--text);
+      background: transparent;
+      outline: none;
+    }
+
+    .field input[type="text"]:focus,
+    .field input[type="date"]:focus {
+      border-bottom-color: var(--blue-accent);
+    }
+
+    .field .static-value {
+      font-size: 0.925rem;
+      color: var(--text);
+      padding: 6px 0;
+      border-bottom: 1px solid #ebebeb;
+    }
+
+    .field .static-value a {
+      color: var(--blue-accent);
+      text-decoration: none;
+    }
+
+    /* ── Tier options ── */
+    .tier-option {
+      display: grid;
+      grid-template-columns: 20px 1fr auto;
+      gap: 12px;
+      align-items: start;
+      padding: 18px 0;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .tier-option:last-of-type {
+      border-bottom: none;
+    }
+
+    .tier-option input[type="checkbox"] {
+      margin-top: 4px;
+      width: 16px;
+      height: 16px;
+      accent-color: var(--navy);
+      cursor: pointer;
+    }
+
+    .tier-option-name {
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .tier-option-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .tier-option-price {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--blue-accent);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    .tier-sub-field {
+      grid-column: 2 / -1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .tier-sub-field input[type="text"] {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      width: 100px;
+      font-family: var(--font);
+      font-size: 0.8rem;
+      outline: none;
+      padding: 2px 0;
+      background: transparent;
+    }
+
+    .tier-sub-field input[type="text"]:focus {
+      border-bottom-color: var(--blue-accent);
+    }
+
+    .tiers-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 14px;
+    }
+
+    /* ── Payment ── */
+    .payment-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+
+    /* ── Terms ── */
+    .terms-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .terms-list li {
+      font-size: 0.875rem;
+      color: #444;
+      line-height: 1.75;
+      padding: 10px 0 10px 20px;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .terms-list li:last-child {
+      border-bottom: none;
+    }
+
+    .terms-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #bbb;
+    }
+
+    /* ── Signatures ── */
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .sig-block h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .sig-line {
+      margin-bottom: 16px;
+    }
+
+    .sig-line label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .sig-line input[type="text"],
+    .sig-line input[type="date"] {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      padding: 6px 0;
+      font-family: var(--font);
+      font-size: 0.925rem;
+      background: transparent;
+      outline: none;
+      color: var(--text);
+    }
+
+    .sig-line input:focus {
+      border-bottom-color: var(--blue-accent);
+    }
+
+    .sig-line .static-value {
+      font-size: 0.925rem;
+      padding: 6px 0;
+      color: var(--text);
+      border-bottom: 1px solid #ebebeb;
+    }
+
+    /* ── Document footer ── */
+    .doc-footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      padding: 28px 40px;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      line-height: 2;
+    }
+
+    .doc-footer a {
+      color: var(--blue-light);
+      text-decoration: none;
+    }
+
+    .doc-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: white; }
+
+      .doc-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .doc-footer {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .doc-body {
+        max-width: 100%;
+        padding: 36px 48px;
+        box-shadow: none;
+      }
+
+      .field input,
+      .sig-line input,
+      .tier-sub-field input {
+        border-bottom-color: #bbb !important;
+      }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .doc-body {
+        padding: 36px 24px;
+      }
+
+      .parties-grid,
+      .sig-grid,
+      .payment-row {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .tier-option {
+        grid-template-columns: 20px 1fr;
+      }
+
+      .tier-option-price {
+        grid-column: 2;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="doc-header">
+    <img src="images/Becky-2026.svg" alt="Becky Yuan 2026" class="header-logo">
+    <div class="header-title">Sponsorship Agreement</div>
+    <div class="header-subtitle">English Channel Solo Crossing &nbsp;·&nbsp; August 18, 2026</div>
+  </header>
+
+  <!-- Document body -->
+  <main class="doc-body">
+
+    <p class="intro">
+      This agreement is entered into by the parties listed below and sets out the terms of the sponsorship arrangement for Becky Yuan's English Channel solo crossing on <strong>August 18, 2026</strong>, in support of The Alexa Trust (UK Registered Charity No.&nbsp;1168705).
+    </p>
+
+    <!-- 1. Parties -->
+    <div class="doc-section">
+      <div class="section-label">Parties</div>
+      <div class="parties-grid">
+
+        <div class="party-block">
+          <h3>Sponsor</h3>
+          <div class="field">
+            <label>Company / Name</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="field">
+            <label>Contact Name</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="field">
+            <label>Date</label>
+            <input type="date">
+          </div>
+        </div>
+
+        <div class="party-block">
+          <h3>Athlete &amp; Organiser</h3>
+          <div class="field">
+            <label>Athlete</label>
+            <div class="static-value">Becky Yuan</div>
+          </div>
+          <div class="field">
+            <label>Organiser / Contact</label>
+            <div class="static-value">Jack So</div>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <div class="static-value"><a href="mailto:sojack@gmail.com">sojack@gmail.com</a></div>
+          </div>
+          <div class="field">
+            <label>Event</label>
+            <div class="static-value">English Channel Solo Crossing — Dover to Calais</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. Selected Tier -->
+    <div class="doc-section">
+      <div class="section-label">Selected Partnership Tier</div>
+
+      <div class="tier-option">
+        <input type="checkbox" id="tier-boat">
+        <div>
+          <div class="tier-option-name">Boat Banner</div>
+          <div class="tier-option-desc">Logo on the pilot boat side panel for the full crossing. Photographed by the official CSA observer — appears in all coverage and photography.</div>
+        </div>
+        <div class="tier-option-price">CA$500–$1,000</div>
+      </div>
+
+      <div class="tier-option">
+        <input type="checkbox" id="tier-kit">
+        <div>
+          <div class="tier-option-name">Team Kit</div>
+          <div class="tier-option-desc">Logo on crew hoodies and hats worn in every social media update before, during, and after the swim.</div>
+        </div>
+        <div class="tier-option-price">CA$250</div>
+      </div>
+
+      <div class="tier-option">
+        <input type="checkbox" id="tier-hourly">
+        <div>
+          <div class="tier-option-name">Hourly Shout-Out</div>
+          <div class="tier-option-desc">Live IG/FB video during a named hour: <em>"Becky is at the halfway mark — powered by [Your Company]!"</em> 13–14 slots available.</div>
+          <div class="tier-sub-field">
+            <label for="tier-hour-select" style="text-transform:none;letter-spacing:0;font-size:0.78rem;color:var(--text-muted);margin-bottom:0;display:inline;">Hour selected:</label>
+            <input type="text" id="tier-hour-select" placeholder="e.g. Hour 4">
+            <span>(leave blank to confirm later)</span>
+          </div>
+        </div>
+        <div class="tier-option-price">CA$100</div>
+      </div>
+
+      <p class="tiers-note">Multiple tiers can be combined. Gear contributions welcome in lieu of cash for the Team Kit tier.</p>
+    </div>
+
+    <!-- 3. Payment -->
+    <div class="doc-section">
+      <div class="section-label">Payment</div>
+      <div class="payment-row">
+        <div class="field">
+          <label>Total Amount Agreed</label>
+          <input type="text" placeholder="CA$">
+        </div>
+        <div class="field">
+          <label>Payment Due Date</label>
+          <input type="date">
+        </div>
+      </div>
+      <div class="field">
+        <label>Payment Method / Notes</label>
+        <input type="text" placeholder="e.g. Interac e-Transfer to sojack@gmail.com">
+      </div>
+    </div>
+
+    <!-- 4. Terms -->
+    <div class="doc-section">
+      <div class="section-label">Terms &amp; Conditions</div>
+      <ul class="terms-list">
+        <li>The Sponsor's logo and branding will be reproduced accurately and at a professional standard for the selected tier(s).</li>
+        <li>The organiser will make reasonable efforts to fulfil all deliverables. If the crossing is postponed or cancelled due to weather or force majeure, the organiser will work with the Sponsor to agree an appropriate resolution.</li>
+        <li>The Sponsor grants the organiser the right to use the Sponsor's logo and name in all materials related to the crossing, including social media, press, and photography.</li>
+        <li>Payment is due in full before the crossing date unless otherwise agreed in writing.</li>
+        <li>All funds raised go toward crossing costs and a donation to The Alexa Trust (UK Registered Charity No.&nbsp;1168705).</li>
+        <li>This agreement is made in good faith between private parties and is not a legally binding commercial contract unless signed by both parties.</li>
+      </ul>
+    </div>
+
+    <!-- 5. Signatures -->
+    <div class="doc-section">
+      <div class="section-label">Signatures</div>
+      <div class="sig-grid">
+
+        <div class="sig-block">
+          <h3>Sponsor</h3>
+          <div class="sig-line">
+            <label>Signature</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="sig-line">
+            <label>Print Name</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="sig-line">
+            <label>Title / Company</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="sig-line">
+            <label>Date</label>
+            <input type="date">
+          </div>
+        </div>
+
+        <div class="sig-block">
+          <h3>Organiser</h3>
+          <div class="sig-line">
+            <label>Signature</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="sig-line">
+            <label>Print Name</label>
+            <div class="static-value">Jack So</div>
+          </div>
+          <div class="sig-line">
+            <label>On Behalf Of</label>
+            <div class="static-value">Becky Yuan — English Channel 2026</div>
+          </div>
+          <div class="sig-line">
+            <label>Date</label>
+            <input type="date">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="doc-footer">
+    The Alexa Trust &nbsp;·&nbsp; UK Registered Charity No. 1168705 &nbsp;·&nbsp; <a href="https://www.alexa-trust.org.uk" target="_blank" rel="noopener">alexa-trust.org.uk</a><br>
+    August 18, 2026 &nbsp;·&nbsp; English Channel &nbsp;·&nbsp; Dover to Calais &nbsp;·&nbsp; <a href="index.html">← Partnership Opportunities</a>
+  </footer>
+
+</body>
+</html>
