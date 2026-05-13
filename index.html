@@ -372,6 +372,57 @@
       .hero-logo { width: 140px; }
       .contact-logo { width: 130px; }
     }
+
+    /* ── Lightbox ── */
+    .zoomable {
+      cursor: zoom-in;
+      transition: opacity 0.15s;
+    }
+
+    .zoomable:hover { opacity: 0.88; }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 20, 0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 6px;
+      box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6);
+      object-fit: contain;
+      animation: lb-in 0.18s ease;
+    }
+
+    @keyframes lb-in {
+      from { opacity: 0; transform: scale(0.96); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px 8px;
+      transition: color 0.15s;
+    }
+
+    .lightbox-close:hover { color: #fff; }
   </style>
 </head>
 <body>
@@ -400,10 +451,10 @@
           <p>A multi-sport endurance athlete since 2016, she placed 3rd in her age category at the Canadaman X-Tri — Canada's toughest full-distance triathlon — and made history as the first Chinese Canadian to swim across Lake Erie (20&nbsp;km, 2022). In 2023 she completed a 42&nbsp;km relay crossing of Lake Ontario. Every dollar raised goes to The Alexa Trust, supporting families with babies in neonatal intensive care.</p>
         </div>
         <div class="photo-grid">
-          <img src="images/erie-02.jpeg" alt="Lake Erie crossing 2022" loading="lazy">
-          <img src="images/erie-03.jpeg" alt="Lake Erie crossing 2022" loading="lazy">
-          <img src="images/lakeO-01.jpeg" alt="Lake Ontario relay 2023" loading="lazy">
-          <img src="images/lakeO-02.jpeg" alt="Lake Ontario relay 2023" loading="lazy">
+          <img src="images/erie-02.jpeg" alt="Lake Erie crossing 2022" loading="lazy" class="zoomable">
+          <img src="images/erie-03.jpeg" alt="Lake Erie crossing 2022" loading="lazy" class="zoomable">
+          <img src="images/lakeO-01.jpeg" alt="Lake Ontario relay 2023" loading="lazy" class="zoomable">
+          <img src="images/lakeO-02.jpeg" alt="Lake Ontario relay 2023" loading="lazy" class="zoomable">
         </div>
       </div>
     </div>
@@ -444,8 +495,8 @@
           <span class="tier-name">Boat Banner</span>
           <span class="tier-price">CA$1,000</span>
         </div>
-        <img src="images/BoatBanner.png" alt="Boat banner mockup — Your Logo Here" class="tier-banner-img">
-        <img src="images/boat-blank.jpg" alt="The pilot boat on the English Channel" class="tier-banner-img" loading="lazy">
+        <img src="images/BoatBanner.png" alt="Boat banner mockup — Your Logo Here" class="tier-banner-img zoomable">
+        <img src="images/boat-blank.jpg" alt="The pilot boat on the English Channel" class="tier-banner-img zoomable" loading="lazy">
         <p class="tier-desc">Your logo on the pilot boat for the full duration of the crossing. The official Channel Swimming Association observer is on board throughout — this placement gets photographed constantly and appears in all coverage.</p>
       </div>
 
@@ -501,6 +552,43 @@
       <p class="contact-closing">August 18, 2026 &nbsp;·&nbsp; English Channel &nbsp;·&nbsp; Dover to Calais</p>
     </div>
   </section>
+
+  <!-- ── Lightbox ── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox   = document.getElementById('lightbox');
+    const lbImg      = document.getElementById('lightbox-img');
+    const lbClose    = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
