@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Becky Yuan: English Channel 2026 — Partnership Opportunity</title>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ── Tokens ── */
+    :root {
+      --navy:       #1a1a2e;
+      --navy-card:  #2a2a4a;
+      --blue-accent:#2d5be3;
+      --blue-light: #6b8fff;
+      --grey-bg:    #f5f5f5;
+      --text:       #222;
+      --text-muted: #666;
+      --white:      #ffffff;
+      --font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── Section base ── */
+    .section { padding: 80px 40px; }
+
+    .section-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/erie-01.jpeg');
+      background-size: cover;
+      background-position: center top;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 26, 46, 0.65);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+      padding: 40px 24px;
+      max-width: 700px;
+    }
+
+    .hero-logo {
+      width: 180px;
+      margin: 0 auto 32px;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+
+    .hero-headline {
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+
+    .hero-subline {
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-tagline {
+      font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: 18px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 1.6rem;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── Story ── */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .story-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .story-text p:last-child { margin-bottom: 0; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* ── Costs ── */
+    .costs { background: var(--grey-bg); }
+
+    .costs .section-label { text-align: center; }
+
+    .costs-table {
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    .costs-table tr { border-bottom: 1px solid #ddd; }
+    .costs-table tr:last-child { border-bottom: none; }
+
+    .costs-table td {
+      padding: 16px 0;
+      font-size: 0.975rem;
+      color: var(--text);
+    }
+
+    .costs-table td:last-child {
+      text-align: right;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .tbc {
+      color: var(--text-muted);
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .costs-note {
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 28px;
+      font-style: italic;
+    }
+
+    /* ── Tiers ── */
+    .tiers { background: var(--navy); color: var(--white); }
+
+    .tiers .section-label { color: rgba(255, 255, 255, 0.35); }
+
+    .tiers-heading {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+
+    .tier-card {
+      background: var(--navy-card);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    .tier-card:last-child { margin-bottom: 0; }
+
+    .tier-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+
+    .tier-name {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .tier-price {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--blue-light);
+    }
+
+    .tier-banner-img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .tier-desc {
+      font-size: 0.925rem;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.65;
+    }
+
+    .tier-desc em { color: rgba(255, 255, 255, 0.9); }
+
+    .tiers-note {
+      margin-top: 28px;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.4);
+      font-style: italic;
+    }
+
+    /* ── Trust ── */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .trust-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .trust-text p:last-child { margin-bottom: 0; }
+
+    .trust-details { min-width: 180px; padding-top: 4px; }
+
+    .trust-details .label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .trust-details p {
+      font-size: 0.875rem;
+      color: var(--text);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .trust-details a {
+      color: var(--blue-accent);
+      text-decoration: none;
+    }
+
+    .trust-details a:hover { text-decoration: underline; }
+
+    /* ── Contact ── */
+    .contact {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .contact-logo {
+      width: 160px;
+      margin: 0 auto 40px;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+
+    .contact-heading {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+    }
+
+    .contact-name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .contact-email a {
+      font-size: 1rem;
+      color: var(--blue-light);
+      text-decoration: none;
+    }
+
+    .contact-email a:hover { text-decoration: underline; }
+
+    .contact-closing {
+      margin-top: 48px;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 767px) {
+      .section { padding: 60px 24px; }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .photo-grid img { height: 140px; }
+
+      .tier-header {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .hero-logo { width: 140px; }
+      .contact-logo { width: 130px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Section 1: Hero ── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="images/Becky-2026.svg" alt="Becky Yuan 2026" class="hero-logo">
+      <h1 class="hero-headline">THE CHANNEL.<br>AGAIN.</h1>
+      <p class="hero-subline">August 18, 2026 &nbsp;·&nbsp; English Channel Solo Crossing</p>
+      <p class="hero-subline">A Marketing Partnership Opportunity</p>
+      <p class="hero-tagline">In support of The Alexa Trust &nbsp;·&nbsp; Charity No. 1168705</p>
+    </div>
+    <div class="hero-scroll">↓</div>
+  </section>
+
+  <!-- ── Section 2: Story ── -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">The Athlete</div>
+      <div class="story-grid">
+        <div class="story-text">
+          <p>Becky Yuan is a long-distance open water swimmer with two serious attempts behind her — her first English Channel crossing in 2024 and a Catalina Channel attempt in 2025, both cut short by violent weather, not by fitness. This August 18, she enters the water again: 33&nbsp;km from England to France.</p>
+          <p>A multi-sport endurance athlete since 2016, she placed 3rd in her age category at the Canadaman X-Tri — Canada's toughest full-distance triathlon — and made history as the first Chinese Canadian to swim across Lake Erie (20&nbsp;km, 2022). In 2023 she completed a 42&nbsp;km relay crossing of Lake Ontario. Every dollar raised goes to The Alexa Trust, supporting families with babies in neonatal intensive care.</p>
+        </div>
+        <div class="photo-grid">
+          <img src="images/erie-02.jpeg" alt="Lake Erie crossing 2022" loading="lazy">
+          <img src="images/erie-03.jpeg" alt="Lake Erie crossing 2022" loading="lazy">
+          <img src="images/lakeO-01.jpeg" alt="Lake Ontario relay 2023" loading="lazy">
+          <img src="images/lakeO-02.jpeg" alt="Lake Ontario relay 2023" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 3: Costs ── -->
+  <section class="section costs">
+    <div class="section-inner">
+      <div class="section-label">What We're Raising For</div>
+      <table class="costs-table">
+        <tbody>
+          <tr>
+            <td>Pilot Boat &amp; Channel Swimming Association Fee</td>
+            <td>GBP 4,500</td>
+          </tr>
+          <tr>
+            <td>Return Flights (Canada → UK)</td>
+            <td>CA$1,500</td>
+          </tr>
+          <tr>
+            <td>Training &amp; Equipment</td>
+            <td>CA$2,500</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="costs-note">All sponsor contributions go directly toward these costs and The Alexa Trust.</p>
+    </div>
+  </section>
+
+  <!-- ── Section 4: Tiers ── -->
+  <section class="section tiers">
+    <div class="section-inner">
+      <div class="section-label">Partnership Opportunities</div>
+      <h2 class="tiers-heading">What's Included</h2>
+
+      <div class="tier-card">
+        <div class="tier-header">
+          <span class="tier-name">Boat Banner</span>
+          <span class="tier-price">CA$500–$1,000</span>
+        </div>
+        <img src="images/BoatBanner.png" alt="Boat banner mockup — Your Logo Here" class="tier-banner-img">
+        <img src="images/boat-blank.jpg" alt="The pilot boat on the English Channel" class="tier-banner-img" loading="lazy">
+        <p class="tier-desc">Your logo on the pilot boat for the full duration of the crossing. The official Channel Swimming Association observer is on board throughout — this placement gets photographed constantly and appears in all coverage.</p>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header">
+          <span class="tier-name">Team Kit</span>
+          <span class="tier-price">CA$250</span>
+        </div>
+        <p class="tier-desc">Your logo on the hoodies and hats worn by the support crew in every social media update before, during, and after the swim.</p>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header">
+          <span class="tier-name">Hourly Shout-Out</span>
+          <span class="tier-price">CA$100</span>
+        </div>
+        <p class="tier-desc">Sponsor a named hour of the crossing. During that hour, the crew posts a live video to Instagram and Facebook: <em>"Becky is at the halfway mark — powered by [Your Company]!"</em> 13–14 slots available — one per hour of the estimated crossing.</p>
+      </div>
+
+      <p class="tiers-note">Multiple tiers can be combined. Gear contributions welcome in lieu of cash for the Team Kit tier.</p>
+    </div>
+  </section>
+
+  <!-- ── Section 5: Alexa Trust ── -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-label">The Cause</div>
+      <div class="trust-grid">
+        <div class="trust-text">
+          <p>The Alexa Trust is a UK-registered charity providing vital practical and emotional support to parents with babies in neonatal intensive care. It was founded in memory of Alexa James, born prematurely in 2015.</p>
+          <p>The Alexa Trust is one of the most frequently chosen charities for English Channel crossings worldwide — your brand joins a community of supporters with global reach in the open water swimming world.</p>
+        </div>
+        <div class="trust-details">
+          <div class="label">Registered Charity</div>
+          <p>UK Charity No. 1168705</p>
+          <div class="label">Website</div>
+          <p><a href="https://www.alexa-trust.org.uk" target="_blank" rel="noopener">alexa-trust.org.uk</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 6: Contact ── -->
+  <section class="section contact">
+    <div class="section-inner">
+      <img src="images/Becky-2026.svg" alt="Becky Yuan 2026" class="contact-logo">
+      <h2 class="contact-heading">READY TO PARTNER WITH US?</h2>
+      <p class="contact-name">Jack So</p>
+      <p class="contact-email"><a href="mailto:sojack@gmail.com">sojack@gmail.com</a></p>
+      <p class="contact-closing">August 18, 2026 &nbsp;·&nbsp; English Channel &nbsp;·&nbsp; Dover to Calais</p>
+    </div>
+  </section>
+
+</body>
+</html>
