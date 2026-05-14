@@ -334,8 +334,35 @@
       text-decoration: underline;
     }
 
+    /* ── Print button ── */
+    .print-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      padding: 12px 20px;
+      font-family: var(--font);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      z-index: 100;
+      transition: background 0.15s;
+    }
+
+    .print-btn:hover {
+      background: var(--navy-card);
+    }
+
     /* ── Print ── */
     @media print {
+      .print-btn { display: none; }
+
       body { background: white; }
 
       .doc-header {
@@ -358,6 +385,14 @@
       .sig-line input,
       .tier-sub-field input {
         border-bottom-color: #bbb !important;
+      }
+
+      .doc-section {
+        page-break-inside: avoid;
+      }
+
+      .sig-grid {
+        page-break-inside: avoid;
       }
     }
 
@@ -569,6 +604,9 @@
     </div>
 
   </main>
+
+  <!-- Download PDF button -->
+  <a href="sponsorship-agreement.pdf" download class="print-btn">⬇ Download / Print PDF</a>
 
   <!-- Footer -->
   <footer class="doc-footer">
